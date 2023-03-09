@@ -1,4 +1,8 @@
 <h1>Orbit Report</h1>
+<app-orbit-list [satellites]="displayList"></app-orbit-list> 
+<!-- pass the displayList array from parent to child -->
+<!-- [satellites] declares a new satellites property on the orbit-list component  -->
+<!-- ="displayList" sets the value of the satellites property to be the displayList array. -->
 
 <div class="search-form">
 	Search: <input #searchTerm type="text" (keyup.enter)="search(searchTerm.value);" name="searchTerm"/>
@@ -7,4 +11,4 @@
 
 <app-orbit-counts [satellites]="displayList"></app-orbit-counts>
 
-<!-- TODO 1: add list component to app HTML -->
+<!--done TODO 1: add list component to app HTML done-->
