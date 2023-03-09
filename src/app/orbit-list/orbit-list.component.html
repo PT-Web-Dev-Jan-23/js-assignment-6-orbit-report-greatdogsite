@@ -9,7 +9,8 @@
     <tr class="data-row" *ngFor ="let satellite of satellites" >
         <!-- added satellite data to list with *ngFor -->
         <td>{{satellite.name}}</td> 
-        <td>{{satellite.type}}</td>
+        <td [class.warning]="satellite.isSpaceDebris(satellite.type)">{{satellite.type}}</td> 
+        <!-- access the method inside the satellite class for a returned boolean -->
         <td>{{satellite.operational}}</td>
         <td>{{satellite.orbitType}}</td>
         <td>{{satellite.launchDate}}</td>
