@@ -6,9 +6,9 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor ="let satellite of satellites" >
+    <tr class="data-row" *ngFor ="let satellite of satellites; index as i" [class.zebra] = "i%2===1">
         <!-- added satellite data to list with *ngFor -->
-        <td>{{satellite.name}}</td> 
+        <td >{{satellite.name}}</td> 
         <td [class.warning]="satellite.isSpaceDebris(satellite.type)">{{satellite.type}}</td> 
         <!-- access the method inside the satellite class for a returned boolean -->
         <td>{{satellite.operational}}</td>
@@ -18,5 +18,5 @@
 </table>
 
 <!--done TODO 2b: use *ngFor to display satellite data in the table done-->
-<!-- TODO 3b: add style directive to conditionally highlight satellite type -->
+<!--done TODO 3b: add style directive to conditionally highlight satellite type done-->
 
